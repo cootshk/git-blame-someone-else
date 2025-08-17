@@ -20,7 +20,7 @@
           with pkgs;
           stdenv.mkDerivation {
             pname = "git-blame-someone-else";
-            version = "0.1.0";
+            version = "1.0.0";
             src = ./.;
             buildInputs = [ git ];
             installPhase = ''
@@ -32,7 +32,6 @@
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
             git
-            make
           ];
         };
       }

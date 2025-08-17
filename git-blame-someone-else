@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ $# -ne 2 ] || [[ "$@" =~ *"--help"* ]]; then
+if [ $# -le 2 ] || [[ "$@" =~ *"--help"* ]]; then
   >&2 echo "Usage: $(basename $0) <author> <commit> [git flags...]"
   exit 1
 fi
