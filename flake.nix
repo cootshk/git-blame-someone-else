@@ -1,14 +1,18 @@
 {
   description = "Blame someone else for your bad code.";
+  nixConfig = {
+    extra-substituters = "https://cootshk.cachix.org";
+    extra-trusted-public-keys = "cootshk.cachix.org-1:yt4kcEbYvyd1Xs/H2Uw7VNOl1EjAiTdef/ZjyQY09CU=";
+  };
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
   };
   outputs =
-    {
-      self,
+    inputs@{
       nixpkgs,
       flake-utils,
+      ...
     }:
     flake-utils.lib.eachDefaultSystem (
       system:
